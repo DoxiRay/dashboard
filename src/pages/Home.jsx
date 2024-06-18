@@ -1,11 +1,15 @@
 import React from 'react';
+import Sidebar from './Sidebar';
 
-function Home() {
+import '../styles/Home.css';
+
+export default function Home() {
   return (
-    <div>
-      <p>Home</p>
-    </div>
-  )
+    <main >
+      <Sidebar/>
+     
+    </main>
+  );
 }
 
-export default Home
+
