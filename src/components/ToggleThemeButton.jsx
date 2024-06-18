@@ -1,15 +1,15 @@
-import React from 'react'
-import {HiOutlineSun, HiOutlineMoon} from "react-icons/hi";
+import React from 'react';
+import { HiOutlineSun, HiOutlineMoon } from "react-icons/hi";
 import { Button } from 'antd';
 
-const ToggleThemeButton = ({darkTheme, toggleTheme}) => {
+const ToggleThemeButton = ({ darkTheme, toggleTheme }) => {
   return (
     <div className='toggle-theme-btn'>
-        <Button onClick={toggleTheme}>
-            {darkTheme ? <HiOutlineSun/> :<HiOutlineMoon/> }
-        </Button>
+      <Button onClick={toggleTheme}>
+        {darkTheme ? <HiOutlineSun /> : <HiOutlineMoon />}
+      </Button>
     </div>
-  )
+  );
 }
 
-export default ToggleThemeButton
+export default ToggleThemeButton;
