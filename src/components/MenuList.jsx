@@ -1,15 +1,23 @@
 import React from 'react';
 import { Menu } from 'antd';
-import { AreaChartOutlined, HomeOutlined, AppstoreOutlined, PieChartOutlined, SettingOutlined } from "@ant-design/icons";
+import { Link } from 'react-router-dom';
+import { AreaChartOutlined, HomeOutlined, AppstoreOutlined, LogoutOutlined } from "@ant-design/icons";
 
 function MenuList({ darkTheme }) {
   return (
     <Menu theme={darkTheme ? 'dark' : 'light'} mode='inline' className='menu-bar'>
-      <Menu.Item key="home" icon={<HomeOutlined />}>Home</Menu.Item>
-      <Menu.Item key="activity" icon={<AppstoreOutlined />}>Activity</Menu.Item>
-      <Menu.Item key="progress" icon={<AreaChartOutlined />}> Stock chart</Menu.Item>
-      <Menu.Item key="progress-sell" icon={<PieChartOutlined />}>Sell chart</Menu.Item>
-      <Menu.Item key="setting" icon={<SettingOutlined />}>Setting</Menu.Item>
+      <Menu.Item key="home" icon={<HomeOutlined />}>
+        <Link to="/home">Home</Link>
+      </Menu.Item>
+      <Menu.Item key="store" icon={<AppstoreOutlined />}>
+        <Link to="/store">Store</Link>
+      </Menu.Item>
+      <Menu.Item key="barchart" icon={<AreaChartOutlined />}>
+        <Link to="/barchart">Bar Chart</Link>
+      </Menu.Item>
+      <Menu.Item key="logout" icon={<LogoutOutlined />}>
+        <Link to="/">Log out</Link>
+      </Menu.Item>
     </Menu>
   );
 }

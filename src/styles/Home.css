@@ -1,0 +1,7 @@
+
+.form-container {
+  flex-grow: 1; /* Permet au conteneur du formulaire de prendre toute la place restante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

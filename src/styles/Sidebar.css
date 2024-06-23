@@ -1,6 +1,6 @@
 .sidebar{
   color:#fff;
-  transition: width 0.2s;
+  transition: width 0.02s;
 }
 .menu-bar{
   height: 88vh;
@@ -10,7 +10,7 @@
   gap: 15px;
   font-size: 1rem;
   position: relative;
-  transition: background-color 0.2s;
+  transition: background-color 0.02s;
 }
 
 .toggle-theme-btn{

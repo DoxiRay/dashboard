@@ -23,7 +23,7 @@ function Login() {
           <button type='submit' className="btn">Login</button> {/* Utilisez className au lieu de class */}
 
           <div className="register-link">
-            <p>Don't have account? <Link to="/signup">Register</Link></p> {/* Utilisez Link pour créer un lien */}
+            <p>Don't have account? <Link  to="/signup">Register</Link></p> {/* Utilisez Link pour créer un lien */}
           </div>
         </form>
       </div>

@@ -1,0 +1,14 @@
+.side-chart-container {
+    display: flex;
+    justify-content: space-between; /* Ajustez selon vos besoins */
+  }
+  
+  .sidebar-container {
+    width: 200px; /* Largeur souhaitée pour le Sidebar */
+    /* Ajoutez d'autres styles nécessaires pour le Sidebar ici */
+  }
+  
+  .chart-container {
+    flex-grow: 1; /* Permet au contenu du graphique de prendre tout l'espace restant */
+  }
+  
