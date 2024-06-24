@@ -4,7 +4,7 @@ import 'boxicons';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
-import Store from './pages/Store';
+import Stock from './pages/Stock';
 import BarChart from './components/BarChart';
 import Form from './components/Form'
 
@@ -15,7 +15,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/store" element={<Store />} />
+            <Route path="/stock" element={<Stock />} />
             <Route path="/barchart" element={<BarChart />} />
             <Route path="/form" element={<Form/>} />
             {/* Ajouter une route pour Setting si nécessaire */}

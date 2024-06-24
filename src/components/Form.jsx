@@ -1,20 +1,39 @@
 import React, { useState } from 'react';
 import '../styles/Form.css';
+import { useNavigate } from 'react-router-dom';
 
-const ProductForm = ({ onAddProduct }) => {
+const ProductForm = () => {
   const [productName, setProductName] = useState('');
   const [productId, setProductId] = useState('');
   const [productPrice, setProductPrice] = useState('');
   const [productNumber, setProductNumber] = useState('');
+  const [productDate, setProductDate] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const newProduct = { productName, productId, productPrice, productNumber };
-    onAddProduct(newProduct);
+    const newProduct = { id: productId, name: productName, price: productPrice, number: productNumber, date: productDate };
+
+    await fetch('http://localhost:5000/api/products', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newProduct),
+    });
+
     setProductName('');
     setProductId('');
     setProductPrice('');
     setProductNumber('');
+    setProductDate('');
+    navigate('/products');
+  };
+
+  const getCurrentDate = () => {
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+    const year = today.getFullYear();
+    return `${year}-${month}-${day}`;
   };
 
   return (
@@ -51,14 +70,16 @@ const ProductForm = ({ onAddProduct }) => {
         onChange={(e) => setProductPrice(e.target.value)}
       />
 
-      <label htmlFor="fileUpload">Files(.csv/.xlsx):</label>
-      <input
-        type="file"
-        id="fileUpload"
-        accept=".xlsx,.csv"
-      />
+      <label htmlFor="productDate">Date:</label>
+        <input
+          type="date"
+          id="productDate"
+          value={productDate}
+          onChange={(e) => setProductDate(e.target.value)}
+          max={getCurrentDate()}
+        /> 
 
-      <button type="submit">Save</button>
+      <button className='btn-submit' type="submit">Save</button>
     </form>
   );
 };

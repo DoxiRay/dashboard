@@ -42,16 +42,15 @@ function Sidebar() {
         <MenuList darkTheme={darkTheme} />
         <ToggleThemeButton darkTheme={darkTheme} toggleTheme={toggleTheme} />
       </Sider>
-      <Layout>{/*Pour reduir et agrandir le sidebar*/}
+      <Layout>{/*Pour reduire et agrandir le sidebar*/}
         {!isMobile && (
-          <Header style={{ padding: 0, background: colorBgContainer }}>
             <Button
               type='text'
               className="toggle"
               onClick={() => setCollapsed(!collapsed)}
               icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
             />
-          </Header>
+
         )}
         
       </Layout>

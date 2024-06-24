@@ -39,8 +39,12 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  margin-top: 15px;
 }
 
 .formulaire button:hover {
   background-color: #0056b3;
+}
+.date-input{
+  margin-left: 10px;
 }

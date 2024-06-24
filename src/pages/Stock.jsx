@@ -1,20 +1,17 @@
 import React from 'react'
 import Sidebar from './Sidebar';
-import SmallCard from '../components/Card';
-function Store() {
+import data from '../data';
+import Table from '../components/Table';
+
+function Stock() {
   return (
     <div className="side-chart-container">
       <div className="sidebar-container">
         <Sidebar />
       </div>
-      <div className='card-container'>
-      <SmallCard
-        title="Riz"
-        number='2'
-      />
-      </div>
+      <Table data={data} /> 
     </div>
   )
 }
 
-export default Store
+export default Stock
